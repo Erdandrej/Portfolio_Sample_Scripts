@@ -22,4 +22,9 @@ public class LocationQuest : Quest
 
         return targetCoords;
     }
+
+    public override Vector3 GetWaypoint()
+    {
+        return targetCoords;
+    }
 }

@@ -26,4 +26,11 @@ public class ArtefactQuest : Quest
 
         return artefactPosition;
     }
+
+    public override Vector3 GetWaypoint()
+    {
+        var artefact = FindObjectsByType<Artefact>(FindObjectsSortMode.None).ToList().Find(a => a.artID == targetArtefactID);
+        if (!artefact) return Vector3.zero;
+        return artefact.transform.position;
+    }
 }
